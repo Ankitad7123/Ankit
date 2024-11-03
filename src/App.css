@@ -1,38 +1,138 @@
-.App {
+/* Reset & Basic Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2c2c2c;
+  background: #f0f2f5;
+  line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 1rem;
+  background: linear-gradient(145deg, #e2e6ea, #ffffff);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Styling */
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: grey;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-family: monospace;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main Content */
+main p {
+  font-size: 1rem;
+  max-width: 90%;
+  color: #4a4a4a;
+  margin: 1rem 0;
+  font-weight: 400;
+  line-height: 1.8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Footer Styling */
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  margin-top: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Social Links */
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.social-links img {
+  width: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+/* Background Image Styling */
+
+
+/* Hover Animations */
+.container:hover header h1 {
+  color: #0073e6;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* Background Image Styling */
+.background-image {
+  top: -87px;
+  width: 40vw;
+  height: auto;
+  opacity: 0.7;
+  mix-blend-mode: darken;
+  position: absolute;
+  bottom: 0;
+  right: -550px;
+  margin: 0 1rem 1rem 0;
+  object-fit: contain; /* Ensures the image scales properly */
+}
+
+.main{
+  width: 550px;
+  margin-left: 50px;
+}
+
+/* Responsive Design for Background Image */
+@media (max-width: 768px) {
+  .main{
+    width: 300px;
+    margin-left: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .background-image {
+    width: 50vw;
+    bottom: -10px;
+    top: 20px;
+    right: 30px;
+    opacity: 0.6;
+    margin: 0; /* Removes margins for better scaling */
+  }
+}
+
+@media (max-width: 480px) {
+  .background-image {
+    width: 70vw; /* Increased width to fill more space */
+    bottom: -20px;
+    top: 20px;
+    right: -20px;
+    opacity: 0.5;
+    object-fit: cover; /* Keeps aspect ratio and fills space */
   }
 }
